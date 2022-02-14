@@ -1,0 +1,25 @@
+name: 'yc-helm'
+description: 'Logging into yandex cloud managed k8s and execute a command "helm" with specified args'
+inputs:
+  SA_KEY:
+    description: 'yandex cloud service account private key (json form). Please ensure that SA has enough privileges to execute your helm command'
+    required: true
+    default: ''
+  K8S_CLUSTER_ID:
+    description: 'yandex cloud managed k8s cluster id. Find it at cluster properties page'
+    required: true
+    default: ''
+  HELM_ARGS:
+    description: 'args to helm command (i.e. "ls" will execute "helm ls")'
+    required: true
+    default: ''
+runs:
+  using: 'docker'
+  # for action debug
+  # image: 'Dockerfile'
+  # for using pre-build version
+  image: 'docker://ghcr.io/okar1/yc-helm:3.8.0'
+  args:
+    - ${{ inputs.SA_KEY }}
+    - ${{ inputs.K8S_CLUSTER_ID }}
+    - ${{ inputs.HELM_ARGS }}

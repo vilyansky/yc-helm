@@ -10,5 +10,5 @@ if ! [[ "$INPUT_SA_KEY" ]]; then
 	exit 1
 fi
 yc config set service-account-key <(echo "$INPUT_SA_KEY") 
-yc managed-kubernetes cluster get-credentials $INPUT_K8S_CLUSTER_ID --external
+yc managed-kubernetes cluster get-credentials $INPUT_K8S_CLUSTER_ID --external --force
 helm $INPUT_HELM_ARGS

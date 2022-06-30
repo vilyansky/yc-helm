@@ -22,7 +22,7 @@ runs:
   # for action debug
   # image: 'Dockerfile'
   # for using pre-build version
-  image: 'docker://ghcr.io/vilyansky/yc-helm-with-kubectl:3.8.0'
+  image: 'docker://ghcr.io/vilyansky/yc-helm:3.8.0-with-kubectl'
   args:
     - ${{ inputs.SA_KEY }}
     - ${{ inputs.K8S_CLUSTER_ID }}

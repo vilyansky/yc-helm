@@ -1,4 +1,4 @@
-# Yandex cloud helm 
+# Yandex cloud helm
 
 ## Example usage
 
@@ -8,6 +8,7 @@
   with:
     SA_KEY: <your service account private key (json form)>
     K8S_CLUSTER_ID: sdy7mdj48shjrtshk657 (you can find it at k8s cluster properties page)
+    KUBECTL_ARGS: cluster-info
     HELM_ARGS: -n prod ls
 ```
 

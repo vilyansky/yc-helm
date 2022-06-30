@@ -13,6 +13,10 @@ inputs:
     description: 'args to helm command (i.e. "ls" will execute "helm ls")'
     required: true
     default: ''
+  KUBECTL_ARGS:
+    description: 'args to kubectl command (i.e. "cluster-info" execute "kubectl cluster-info")'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   # for action debug
@@ -23,3 +27,4 @@ runs:
     - ${{ inputs.SA_KEY }}
     - ${{ inputs.K8S_CLUSTER_ID }}
     - ${{ inputs.HELM_ARGS }}
+    - ${{ inputs.KUBECTL_ARGS }}
